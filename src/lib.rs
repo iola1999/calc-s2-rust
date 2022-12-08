@@ -61,7 +61,7 @@ pub fn new_buffer() -> *const u8 {
     // log!("new_buffer, key: {:?}, len: {:?}", key, len);
     let mut global_buffer_storage = GlobalBufferStorage.lock().unwrap();
     // let mut buffer = vec![255; len];
-    let mut buffer = vec![255; 75264];
+    let mut buffer = vec![255; 478272];
     // 这里我们增加一个随机数逻辑：
     for val in buffer.iter_mut() {
         *val = __random();
@@ -115,6 +115,10 @@ pub fn remove_buffer(key: String) {
 
 #[wasm_bindgen]
 pub fn convolution(key: String, width: usize, height: usize, kernel: Vec<i32>) {
+    log!("call convolution key: {:?}", key);
+    log!("call convolution width: {:?}", width);
+    log!("call convolution height: {:?}", height);
+    log!("call convolution kernel: {:?}", kernel);
     let mut global_buffer_storage = GlobalBufferStorage.lock().unwrap();
     let kernel_length = kernel.iter().sum::<i32>() as i32;
     if let Some(buffer) = global_buffer_storage.buffer_map.get_mut(&key) {
