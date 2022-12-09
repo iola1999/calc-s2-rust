@@ -18,6 +18,7 @@ lazy_static = "1.2"
 serde = "1.0.102"
 serde_derive = "1.0.102"
 rand = "0.7.3"
+yuvxyb = "0.3.0"
 
 # The `console_error_panic_hook` crate provides better debugging of panics by
 # logging them with `console.error`. This is great for development, but requires
@@ -32,8 +33,23 @@ console_error_panic_hook = { version = "0.1.6", optional = true }
 # Unfortunately, `wee_alloc` requires nightly Rust when targeting wasm for now.
 wee_alloc = { version = "0.4.5", optional = true }
 
+#[dependencies.ssimulacra2]
+#version = "0.3.0"
+#default-features = false
+#features = []
+
+aligned = "0.4.1"
+anyhow = "1.0.0"
+nalgebra = "0.31.1"
+num-traits = "0.2.15"
+wide = "0.7.5"
+
 [dev-dependencies]
 wasm-bindgen-test = "0.3.13"
+
+criterion = "0.4.0"
+image = "0.24.4"
+rand = "0.8.5"
 
 [profile.release]
 # Tell `rustc` to optimize for small code size.
