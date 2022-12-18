@@ -8,7 +8,9 @@ Written in Rust, compiled to Wasm, for computing ssimulacra2 in browser or Nodej
 
 npm package: [https://www.npmjs.com/package/calc-s2-rust](https://www.npmjs.com/package/calc-s2-rust)
 
-Demo: [https://github.com/iola1999/calc-s2-vitefe](https://github.com/iola1999/calc-s2-vitefe)
+Demo: [https://calc-s2-vitefe.vercel.app/](https://calc-s2-vitefe.vercel.app/)
+
+Demo code: [https://github.com/iola1999/calc-s2-vitefe](https://github.com/iola1999/calc-s2-vitefe)
 
 ## Build
 
