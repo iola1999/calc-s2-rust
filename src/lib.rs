@@ -91,7 +91,7 @@ pub fn remove_buffer(key: String) {
 
 #[wasm_bindgen]
 pub fn calc_s2(img1_key: String, img2_key: String, width: usize, height: usize) -> f64 {
-    let global_buffer_storage = GLOBAL_BUFFER_STORAGE.lock().unwrap();
+    let mut global_buffer_storage = GLOBAL_BUFFER_STORAGE.lock().unwrap();
     let _buffer1 = global_buffer_storage
         .buffer_map
         .get(&img1_key)
@@ -147,6 +147,9 @@ pub fn calc_s2(img1_key: String, img2_key: String, width: usize, height: usize) 
 
     let res = compute_frame_ssimulacra2(source_data, distorted_data)
         .expect("Failed to calculate ssimulacra2");
+
+    global_buffer_storage.buffer_map.remove(&img1_key);
+    global_buffer_storage.buffer_map.remove(&img2_key);
     res
 }
 

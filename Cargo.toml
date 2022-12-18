@@ -1,8 +1,9 @@
 [package]
 name = "calc-s2-rust"
-version = "0.1.0"
+version = "1.0.2"
 authors = ["iola1999 <iola1999@foxmail.com>"]
 edition = "2018"
+keywords = ["ssimulacra2", "wasm", "rust"]
 
 [workspace]
 

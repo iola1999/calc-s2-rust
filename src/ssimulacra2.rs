@@ -1,4 +1,5 @@
 // forked from https://github.com/rust-av/ssimulacra2
+
 #![deny(clippy::all)]
 #![warn(clippy::nursery)]
 #![warn(clippy::pedantic)]
