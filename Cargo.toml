@@ -1,9 +1,12 @@
 [package]
 name = "calc-s2-rust"
-version = "1.0.2"
+version = "1.0.3"
 authors = ["iola1999 <iola1999@foxmail.com>"]
 edition = "2018"
 keywords = ["ssimulacra2", "wasm", "rust"]
+repository = "https://github.com/iola1999/calc-s2-rust"
+description = "Written in rust, compiled to wasm, for computing ssimulacra2 in browser or Nodejs environment."
+license = "BSD-2-Clause"
 
 [workspace]
 

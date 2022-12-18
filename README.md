@@ -1,6 +1,8 @@
 # calc-s2-rust
 
-[ssimulacra2](https://github.com/cloudinary/ssimulacra2) 计算工具，使用 Rust 编写并构建为 Wasm，使其可以运行在 Web 端。
+[ssimulacra2](https://github.com/cloudinary/ssimulacra2) 计算工具，使用 Rust 编写并构建为 Wasm, 使其可以运行在 Web 端。
+
+Written in Rust, compiled to Wasm, for computing ssimulacra2 in browser or Nodejs environment.
 
 ## Usage
 
