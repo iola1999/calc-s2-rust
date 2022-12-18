@@ -52,7 +52,7 @@ pub fn set_wasm_panic_hook() {
 
 #[wasm_bindgen]
 pub fn new_buffer(key: String, len: usize) -> *const u8 {
-    log!("new_buffer, key: {:?}, len: {:?}", key, len);
+    // log!("new_buffer, key: {:?}, len: {:?}", key, len);
     let mut global_buffer_storage = GLOBAL_BUFFER_STORAGE.lock().unwrap();
     let buffer = vec![255 as u8; len];
     let ptr = buffer.as_ptr();
