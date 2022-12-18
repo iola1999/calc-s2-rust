@@ -75,7 +75,7 @@ pub fn print_buffer(key: String) {
     log!("call print buffer");
     let global_buffer_storage = GLOBAL_BUFFER_STORAGE.lock().unwrap();
     if let Some(buffer) = global_buffer_storage.buffer_map.get(&key) {
-        log!("[render-wasm]print buffer: {:?}", buffer);
+        log!("[calc_s2]print buffer: {:?}", buffer);
     }
 }
 
@@ -98,7 +98,13 @@ pub fn calc_s2(img1_key: String, img2_key: String, width: usize, height: usize) 
         .expect("NoSuchKey");
     let chunked_vec1 = _buffer1
         .chunks(3)
-        .map(|chunk| [chunk[0] as f32, chunk[1] as f32, chunk[2] as f32])
+        .map(|chunk| {
+            [
+                chunk[0] as f32 / 255.0,
+                chunk[1] as f32 / 255.0,
+                chunk[2] as f32 / 255.0,
+            ]
+        })
         .collect::<Vec<_>>();
 
     let source_data = Xyb::try_from(
@@ -119,7 +125,13 @@ pub fn calc_s2(img1_key: String, img2_key: String, width: usize, height: usize) 
         .expect("NoSuchKey");
     let chunked_vec2 = _buffer2
         .chunks(3)
-        .map(|chunk| [chunk[0] as f32, chunk[1] as f32, chunk[2] as f32])
+        .map(|chunk| {
+            [
+                chunk[0] as f32 / 255.0,
+                chunk[1] as f32 / 255.0,
+                chunk[2] as f32 / 255.0,
+            ]
+        })
         .collect::<Vec<_>>();
     let distorted_data = Xyb::try_from(
         Rgb::new(

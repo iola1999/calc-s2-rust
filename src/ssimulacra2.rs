@@ -1,3 +1,4 @@
+// forked from https://github.com/rust-av/ssimulacra2
 #![deny(clippy::all)]
 #![warn(clippy::nursery)]
 #![warn(clippy::pedantic)]
@@ -451,7 +452,7 @@ impl Msssim {
 
 #[cfg(test)]
 mod tests {
-    use std::{path::PathBuf, convert::TryFrom};
+    use std::{convert::TryFrom, path::PathBuf};
 
     use super::*;
     use yuvxyb::Rgb;
@@ -470,14 +471,14 @@ mod tests {
                 .join("tank_distorted.png"),
         )
         .unwrap();
-        let source_data = source
+        let source_data0 = source
             .to_rgb32f()
             .chunks_exact(3)
             .map(|chunk| [chunk[0], chunk[1], chunk[2]])
             .collect::<Vec<_>>();
         let source_data = Xyb::try_from(
             Rgb::new(
-                source_data,
+                source_data0,
                 source.width() as usize,
                 source.height() as usize,
                 TransferCharacteristic::SRGB,
